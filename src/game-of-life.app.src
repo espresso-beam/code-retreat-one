@@ -1,0 +1,12 @@
+{application, game-of-life,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { game-of-life_app, []}},
+  {env, []}
+ ]}.
