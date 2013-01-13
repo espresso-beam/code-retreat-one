@@ -10,7 +10,7 @@ contains the code of a single retreat *iteration*.
 
 About
 =====
-**Espresso Beam** is a team of three folks passionate about *Erlang*:
+**Espresso Beam** is a team of three folks passionate about **Erlang**:
 
 * [Mirko Bonadei](https://github.com/MirkoBonadei)    
 * [Paolo D'Incau](https://github.com/pdincau)    
