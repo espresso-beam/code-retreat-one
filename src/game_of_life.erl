@@ -2,11 +2,10 @@
 
 -export([life/2]).
 
-life(_State, AliveNeighbours) when AliveNeighbours < 2 -> dead;
-life(alive,  AliveNeighbours) when AliveNeighbours =< 3 -> alive;
-life(dead,   AliveNeighbours) when AliveNeighbours == 3 -> alive;
-life(_State, _AliveNeighbours) -> dead.
 
+life(_State, 3) -> alive;
+life(alive, 2) -> alive;
+life(_State, _AliveNeighbours) -> dead.
 
 
 -ifdef(TEST).
@@ -47,10 +46,5 @@ alive_cell_should_die_when_overpopulated_test() ->
     
     State5 = life(alive, 5),
     ?assertEqual(dead, State5).
-
-
-
-%% Any live cell with more than three live neighbours dies,
-%%  as if by overcrowding.
 
 -endif.
