@@ -5,7 +5,7 @@
 life(_State, AliveNeighbours) when AliveNeighbours < 2 -> dead;
 life(alive,  AliveNeighbours) when AliveNeighbours =< 3 -> alive;
 life(dead,   AliveNeighbours) when AliveNeighbours == 3 -> alive;
-life(_State, _AliveNeighbours) -> nil.
+life(_State, _AliveNeighbours) -> dead.
 
 
 
@@ -41,12 +41,16 @@ dead_cell_should_live_with_3_neighbours_test() ->
     State3 = life(dead, 3),
     ?assertEqual(alive, State3).
 
+alive_cell_should_die_when_overpopulated_test() ->
+    State4 = life(alive, 4),
+    ?assertEqual(dead, State4),
+    
+    State5 = life(alive, 5),
+    ?assertEqual(dead, State5).
+
 
 
 %% Any live cell with more than three live neighbours dies,
 %%  as if by overcrowding.
-
-%% Any dead cell with exactly three live neighbours becomes a live cell,
-%%  as if by reproduction.
 
 -endif.
