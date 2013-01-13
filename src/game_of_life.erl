@@ -3,7 +3,8 @@
 -export([life/1]).
 
 life(AliveNeighbours) when AliveNeighbours < 2 -> dead;
-life(AliveNeighbours) -> nil.
+life(AliveNeighbours) when AliveNeighbours =< 3 -> live;
+life(_AliveNeighbours) -> nil.
 
 
 -ifdef(TEST).
@@ -12,8 +13,6 @@ life(AliveNeighbours) -> nil.
 should_always_pass_test() ->
     ?assert(true).
 
-%% Any live cell with fewer than two live neighbours dies,
-%%  as if caused by under-population.
 should_die_when_underpopulated_test() ->
     State1 = life(1),
     ?assertEqual(dead, State1),
@@ -21,8 +20,13 @@ should_die_when_underpopulated_test() ->
     State0 = life(0),
     ?assertEqual(dead, State0).
 
-
 %% Any live cell with two or three live neighbours lives on to the next generation.
+should_live_with_2_or_3_neighbours_test() ->
+    State2 = life(2),
+    ?assertEqual(live, State2),
+    
+    State3 = life(3),
+    ?assertEqual(live, State3).
 
 %% Any live cell with more than three live neighbours dies,
 %%  as if by overcrowding.
