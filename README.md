@@ -13,6 +13,6 @@ About
 =====
 Espresso Beam is a team of three folks passionate about *Erlang*:
 
-[Mirko Bonadei](https://github.com/MirkoBonadei)
-[Paolo D'Incau](https://github.com/pdincau)
-[Loris Fichera](https://github.com/kid-a)
+* [Mirko Bonadei](https://github.com/MirkoBonadei)    
+* [Paolo D'Incau](https://github.com/pdincau)    
+* [Loris Fichera](https://github.com/kid-a)    
